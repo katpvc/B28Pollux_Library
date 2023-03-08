@@ -38,6 +38,15 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+    @FindBy(linkText = "Users")
+    public WebElement usersLink;
+
+    @FindBy(linkText = "Books")
+    public WebElement booksLink;
+
+    @FindBy(linkText = "Dashboard")
+    public WebElement dashboardLink;
+
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
