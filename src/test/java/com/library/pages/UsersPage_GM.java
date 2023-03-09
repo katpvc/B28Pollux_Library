@@ -14,6 +14,15 @@ public class UsersPage_GM {
     @FindBy(xpath = "//input[@type='search']")
     public WebElement searchBox;
 
+    @FindBy(xpath = "//td[.='7587']")
+    public WebElement actualId;
+
+    @FindBy(xpath = "//td[.='Asuncion Pfeffer']")
+    public WebElement actualFullName;
+
+    @FindBy (xpath = "//td[.='OraliaDaugherty2345@library.com']")
+    public WebElement actualEmail;
+
 
 
 
