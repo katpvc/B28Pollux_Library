@@ -2,6 +2,7 @@ package com.library.step_definitions;
 
 import com.library.pages.BasePage;
 import com.library.pages.LoginPage;
+import com.library.pages.US60_Page;
 import com.library.utilities.BrowserUtils;
 import com.library.utilities.ConfigurationReader;
 import com.library.utilities.Driver;
@@ -10,9 +11,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class US60_StepDefs extends BasePage {
+public class US60_StepDefs {
 
     LoginPage loginPage = new LoginPage();
+    US60_Page us60Page = new US60_Page();
 
     @Given("I am on the login page")
     public void iAmOnTheLoginPage() {
@@ -30,11 +32,14 @@ public class US60_StepDefs extends BasePage {
     public void iClickOnModule(String arg0) {
 
         if (arg0.equalsIgnoreCase("Users")) {
-            usersLink.click();
+            //usersLink.click();
+            us60Page.usersLink.click();
         }else if (arg0.equalsIgnoreCase("Books")) {
-            booksLink.click();
+           // booksLink.click();
+            us60Page.booksLink.click();
         }else if (arg0.equalsIgnoreCase("Dashboard")){
-            dashboardLink.click();
+            // dashboardLink.click();
+            us60Page.usersLink.click();
         }
 
     }
@@ -55,8 +60,8 @@ public class US60_StepDefs extends BasePage {
 
     @When("I click on {string} link")
     public void iClickOnLink(String arg0) {
-        booksLink.click();
-        dashboardLink.click();
+        us60Page.booksLink.click();
+        us60Page.dashboardLink.click();
     }
 
 
