@@ -15,3 +15,4 @@ Feature: search new users dialog
       | User ID   | 7587                            |
       | Full Name | Asuncion Pfeffer                |
       | Email     | OraliaDaugherty2345@library.com |
+
