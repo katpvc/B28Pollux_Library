@@ -21,6 +21,8 @@ import java.util.List;
 public abstract class BasePage {
     public BasePage(){
         PageFactory.initElements(Driver.getDriver(),this);
+
+        //
     }
 
     @FindBy(xpath = "//a[@class='navbar-brand']")
