@@ -49,6 +49,42 @@ public class BooksPage extends BasePage{
         result.put("Year",year.getText());
         return result;
     }
+    @FindBy(xpath = "//span[.='Test Student 27']/..")
+    private WebElement userLink;
+
+    @FindBy(xpath = "//span[.='Books']/..")
+    private WebElement booksLink;
+
+    @FindBy(xpath = "//span[.='Borrowing Books']/..")
+    private WebElement borrowBooksLink;
+
+    @FindBy(xpath = "//a[@class='navbar-brand']")
+    private WebElement library_link;
+    public void logout(){
+        BrowserUtils.waitForClickablility(userLink,3);
+        userLink.click();
+     /*   BrowserUtils.waitForClickablility(logoutLink,3);
+        logoutLink.click();
+
+      */
+
+
+    }
+    public void navigateTo(String linkName){
+        switch (linkName){
+            case "Books":
+                BrowserUtils.waitForClickablility(booksLink,3);
+                booksLink.click();
+                break;
+            case "Borrowing Books":
+                BrowserUtils.waitForClickablility(borrowBooksLink,3);
+                break;
+            case "Library":
+                BrowserUtils.waitForClickablility(library_link,3);
+                break;
+
+        }
+    }
 
 
 }
