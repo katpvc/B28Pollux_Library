@@ -6,11 +6,13 @@ import com.library.utilities.Driver;
 import io.cucumber.java.en.Given;
 public class LoginStepDefs {
 
-  LoginPage loginPage = new LoginPage();
+
+    LoginPage loginPage = new LoginPage();
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
-            Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        }
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+
+    }
 
 
     @Given("the user logged in as {string}")
