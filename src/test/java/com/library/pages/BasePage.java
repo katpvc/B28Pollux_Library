@@ -1,8 +1,5 @@
 package com.library.pages;
 
-
-
-
 import com.library.utilities.BrowserUtils;
 import com.library.utilities.Driver;
 import org.openqa.selenium.By;
@@ -29,7 +26,7 @@ public abstract class BasePage {
     @FindBy(css = "h1[class='oro-subtitle']")
     public WebElement pageSubTitle;
 
-    @FindBy(css = "#user-menu > a")
+    @FindBy(xpath = "//span[normalize-space()=\"Users\"]")
     public WebElement userName;
 
     @FindBy(linkText = "Logout")
@@ -97,6 +94,16 @@ public abstract class BasePage {
         } catch (Exception e) {
 //            BrowserUtils.waitForStaleElement(Driver.get().findElement(By.xpath(moduleLocator)));
             BrowserUtils.clickWithTimeOut(Driver.getDriver().findElement(By.xpath(moduleLocator)),  5);
+        }
+    }
+
+    public WebElement getElement() {  // this method prevents StaleElementReferenceException by relocating the same element
+        try {
+            return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//table//tr//td)[4]")));
+        } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+            return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//table//tr//td)[4]")));
         }
     }
 
