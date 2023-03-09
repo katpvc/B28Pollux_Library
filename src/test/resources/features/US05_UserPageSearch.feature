@@ -21,3 +21,5 @@ Feature: Search functionality on the users page
       | Email     |
       | Group     |
       | Status    |
+
+    #finished everything

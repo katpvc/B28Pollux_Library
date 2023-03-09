@@ -43,5 +43,6 @@ public class US05_userPageSearch_stepDef {
         }
 
         Assert.assertEquals(expectedNames,actualNames);
+
     }
 }
