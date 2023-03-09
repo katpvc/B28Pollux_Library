@@ -21,6 +21,10 @@ import java.util.List;
 public abstract class BasePage {
 
     @FindBy(xpath = "//a[@class='navbar-brand']")
+
+
+
+
     private WebElement library_link;
 
     @FindBy(xpath = "//span[.='Books']/..")
