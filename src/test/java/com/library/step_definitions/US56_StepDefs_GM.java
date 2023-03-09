@@ -2,11 +2,13 @@ package com.library.step_definitions;
 
 import com.library.pages.HomePage_GM;
 import com.library.pages.LoginPage;
+import com.library.pages.UserManagement_GM;
 import com.library.pages.UsersPage_GM;
 import com.library.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 import java.util.Map;
 
@@ -43,12 +45,25 @@ public class US56_StepDefs_GM {
 
 
     }
+
+    UserManagement_GM userManagement_gm = new UserManagement_GM();
+
+
     @Then("user should see table containing the below data")
     public void user_should_see_table_containing_the_below_data(Map<String,String> userInfo) {
-        System.out.println("userInfo = " + userInfo);
-        System.out.println("userInfo.get(\"User ID\") = " + userInfo.get("User ID"));
-        System.out.println("userInfo.get(\"Full Name\") = " + userInfo.get("Full Name"));
-        System.out.println("userInfo.get(\"Email\") = " + userInfo.get("Email"));
+        String actualIdText = userManagement_gm.actualId.getText();
+        String actualFullName = userManagement_gm.actualFullName.getText();
+        String actualEmail = userManagement_gm.actualEmail.getText();
+
+        String expectedId = "7587";
+        String expectedFullName = "Asuncion Pfeffer";
+        String expectedEmail = "OraliaDaugherty2345@library.com";
+
+        Assert.assertEquals(actualIdText,expectedId);
+        Assert.assertEquals(actualFullName,expectedFullName);
+        Assert.assertEquals(actualEmail,expectedEmail);
+
+
 
     }
 
