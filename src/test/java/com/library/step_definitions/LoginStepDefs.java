@@ -2,13 +2,16 @@ package com.library.step_definitions;
 
 import com.library.pages.LoginPage;
 import com.library.utilities.ConfigurationReader;
+import com.library.utilities.Driver;
 import io.cucumber.java.en.Given;
 public class LoginStepDefs {
 
-
+    LoginPage loginPage = new LoginPage();
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
-        System.out.println("Login to app in Before method");
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        loginPage.login(ConfigurationReader.getProperty("librarian_username"),
+                ConfigurationReader.getProperty("librarian_password"));
     }
 
     @Given("the user logged in as {string}")
