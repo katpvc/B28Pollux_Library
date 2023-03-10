@@ -16,8 +16,13 @@ public abstract class BasePage {
 
     public WebElement library_link;
 
+
+    @FindBy(xpath = "//span[normalize-space()=\"Users\"]")
+    public WebElement userName;
+
     @FindBy(xpath = "//span[.='Books']/..")
     public WebElement booksLink;
+
 
     @FindBy(xpath = "//span[.='Borrowing Books']/..")
     public WebElement borrowBooksLink;
@@ -55,6 +60,18 @@ public abstract class BasePage {
         logoutLink.click();
 
     }
+
+
+    public WebElement getElement() {  // this method prevents StaleElementReferenceException by relocating the same element
+        try {
+            return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//table//tr//td)[4]")));
+        } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+            return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10))
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//table//tr//td)[4]")));
+        }
+    }
+
 
 
 

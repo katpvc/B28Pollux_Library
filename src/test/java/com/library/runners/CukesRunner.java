@@ -14,9 +14,17 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/library/step_definitions",
         dryRun = false,
+
+        tags = "@kursad",
+
         tags = "@eka",
+
         publish = true //generating a report with public link
 )
 public class CukesRunner {}
+
+
+
+
 
 
