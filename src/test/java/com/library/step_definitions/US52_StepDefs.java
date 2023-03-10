@@ -19,20 +19,23 @@ import java.util.Optional;
 
 public class US52_StepDefs {
 
-    @Given("I am on the login page")
-    public void iAmOnTheLoginPage() {
-        System.out.println("Login to app in Before method");
-    }
+    //TODO Please remove all the duplication steps on the step definition classes as they cause errors
+
+
+//    @Given("I am on the login page")
+//    public void iAmOnTheLoginPage() {
+//        System.out.println("Login to app in Before method");
+//    }
 
 
     US52_NumberOfRowsPage us52_numberOfRowsPage = new US52_NumberOfRowsPage();
 
-    @Given("I login as a librarian")
-    public void i_login_as_a_librarian() {
-        us52_numberOfRowsPage.userNameBox.sendKeys(ConfigurationReader.getProperty("librarian_username"));
-        us52_numberOfRowsPage.passwordBox.sendKeys(ConfigurationReader.getProperty("librarian_password"));
-        us52_numberOfRowsPage.signInButton.click();
-    }
+//    @Given("I login as a librarian")
+//    public void i_login_as_a_librarian() {
+//        us52_numberOfRowsPage.userNameBox.sendKeys(ConfigurationReader.getProperty("librarian_username"));
+//        us52_numberOfRowsPage.passwordBox.sendKeys(ConfigurationReader.getProperty("librarian_password"));
+//        us52_numberOfRowsPage.signInButton.click();
+//    }
 
     @Given("I click on Users link")
     public void i_click_on_users_link() {

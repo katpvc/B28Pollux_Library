@@ -24,11 +24,11 @@ public class US51_UserInfoTable_StepsDef {
                 ConfigurationReader.getProperty("librarian_password"));
     }
 
-    @And("I click on {string} link")
-    public void iClickOnLink(String user) {
-
-        us51_useInfoTable_pageFM.userLink.click();
-    }
+//    @And("I click on {string} link")
+//    public void iClickOnLink(String user) {
+//
+//        us51_useInfoTable_pageFM.userLink.click();
+//    }
 
     @When("I select Show {int} records")
     public void iSelectShowRecords(int records_50) {

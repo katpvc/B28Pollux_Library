@@ -21,12 +21,12 @@ public class US60_StepDefs {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-    @And("I login as a librarian")
-    public void iLoginAsALibrarian() {
-        loginPage.userName.sendKeys(ConfigurationReader.getProperty("librarian_username"));
-        loginPage.password.sendKeys(ConfigurationReader.getProperty("librarian_password"));
-        loginPage.signInBtn.click();
-    }
+//    @And("I login as a librarian")
+//    public void iLoginAsALibrarian() {
+//        loginPage.userName.sendKeys(ConfigurationReader.getProperty("librarian_username"));
+//        loginPage.password.sendKeys(ConfigurationReader.getProperty("librarian_password"));
+//        loginPage.signInBtn.click();
+//    }
 
     @When("I click on {string} module")
     public void iClickOnModule(String arg0) {
@@ -35,7 +35,7 @@ public class US60_StepDefs {
             //usersLink.click();
             us60Page.usersLink.click();
         }else if (arg0.equalsIgnoreCase("Books")) {
-           // booksLink.click();
+            // booksLink.click();
             us60Page.booksLink.click();
         }else if (arg0.equalsIgnoreCase("Dashboard")){
             // dashboardLink.click();

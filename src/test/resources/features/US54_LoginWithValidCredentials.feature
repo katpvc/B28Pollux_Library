@@ -7,7 +7,7 @@ Feature: User valid login
     When User login using "<email>" and "<password>"
     Then account holder name should be "<name>"
 
-    @students
+    @students @eka
     Examples:
     | email             | password    | name            |
     | student27@library | libraryUser | Test Student 27 |
