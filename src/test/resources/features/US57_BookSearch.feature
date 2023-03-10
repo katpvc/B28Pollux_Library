@@ -4,7 +4,7 @@ Background: User is already in the log in page
  Given the user is on the login page
 
 
-@Flora
+@flora
 Scenario:As a user,I should be able to search a book
   Given I login to application as a student
   And I navigate to "Books" page
